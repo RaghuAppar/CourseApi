@@ -2,6 +2,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
+COPY ["TrainingManagement.CourseApi.csproj","./"]
 RUN dotnet restore "TrainingManagement.CourseApi.csproj"
 RUN dotnet publish "TrainingManagement.CourseApi.csproj" -c Release -o /app/publish
 
